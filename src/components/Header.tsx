@@ -32,7 +32,9 @@ export default function Header() {
               Contact
             </Link>
             <a
-              href="/cv.pdf"
+              href="https://erduoliveira.github.io/resume"
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-2 px-4 py-2 text-sm font-semibold bg-cyan-500 hover:bg-cyan-400 text-slate-950 rounded-md transition-colors"
             >
               Download CV

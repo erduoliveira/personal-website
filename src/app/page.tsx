@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const skills = [
   "TypeScript",
@@ -97,49 +98,67 @@ export default function HomePage() {
       {/* Hero */}
       <section className="min-h-[calc(100vh-4rem)] flex items-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
-          <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-4">
-            Hello, I&apos;m
-          </p>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-50 mb-4 leading-tight">
-            Eduardo R.{" "}
-            <span className="text-cyan-400">Oliveira</span>
-          </h1>
-          <h2 className="text-xl sm:text-2xl text-slate-400 font-medium mb-6">
-            Full Stack Developer
-          </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mb-10 leading-relaxed">
-            5+ years building scalable web and mobile applications with modern
-            TypeScript, React, and Node.js stacks. Based in{" "}
-            <span className="text-slate-300">Oviedo, Florida, USA</span>.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="/cv.pdf"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold rounded-lg transition-colors"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-5 h-5"
-              >
-                <path d="M10.75 2.75a.75.75 0 0 0-1.5 0v8.614L6.295 8.235a.75.75 0 1 0-1.09 1.03l4.25 4.5a.75.75 0 0 0 1.09 0l4.25-4.5a.75.75 0 0 0-1.09-1.03l-2.955 3.129V2.75Z" />
-                <path d="M3.5 12.75a.75.75 0 0 0-1.5 0v2.5A2.75 2.75 0 0 0 4.75 18h10.5A2.75 2.75 0 0 0 18 15.25v-2.5a.75.75 0 0 0-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5Z" />
-              </svg>
-              Download CV
-            </a>
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 font-semibold rounded-lg transition-colors"
-            >
-              View Projects
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-slate-700 text-slate-300 hover:bg-slate-800 font-semibold rounded-lg transition-colors"
-            >
-              Get in Touch
-            </Link>
+          <div className="grid md:grid-cols-3 gap-12 items-center">
+            <div className="md:col-span-2">
+              <p className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-4">
+                Hello, I&apos;m
+              </p>
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-slate-50 mb-4 leading-tight">
+                Eduardo R. <span className="text-cyan-400">Oliveira</span>
+              </h1>
+              <h2 className="text-xl sm:text-2xl text-slate-400 font-medium mb-6">
+                Full Stack Developer
+              </h2>
+              <p className="text-slate-400 text-lg mb-10 leading-relaxed">
+                5+ years building scalable web and mobile applications with
+                modern TypeScript, React, and Node.js stacks. Based in{" "}
+                <span className="text-slate-300">Oviedo, Florida, USA</span>.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href="https://erduoliveira.github.io/resume"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold rounded-lg transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path d="M10.75 2.75a.75.75 0 0 0-1.5 0v8.614L6.295 8.235a.75.75 0 1 0-1.09 1.03l4.25 4.5a.75.75 0 0 0 1.09 0l4.25-4.5a.75.75 0 0 0-1.09-1.03l-2.955 3.129V2.75Z" />
+                    <path d="M3.5 12.75a.75.75 0 0 0-1.5 0v2.5A2.75 2.75 0 0 0 4.75 18h10.5A2.75 2.75 0 0 0 18 15.25v-2.5a.75.75 0 0 0-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5Z" />
+                  </svg>
+                  Download CV
+                </a>
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-cyan-500 text-cyan-400 hover:bg-cyan-500/10 font-semibold rounded-lg transition-colors"
+                >
+                  View Projects
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-slate-700 text-slate-300 hover:bg-slate-800 font-semibold rounded-lg transition-colors"
+                >
+                  Get in Touch
+                </Link>
+              </div>
+            </div>
+            <div className="flex justify-center md:justify-end md:col-span-1">
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80">
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-cyan-700 rounded-full blur-2xl opacity-20"></div>
+                <Image
+                  src="/profile.jpg"
+                  alt="Eduardo R. Oliveira"
+                  width={320}
+                  height={320}
+                  className="relative rounded-full border-4 border-cyan-500/30 shadow-2xl object-cover"
+                  priority
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

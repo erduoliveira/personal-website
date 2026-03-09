@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getProjectBySlug, projects } from "@/data/projects";
 import type { Metadata } from "next";
 
@@ -51,10 +52,13 @@ export default async function ProjectDetailPage({ params }: Props) {
           Back to Projects
         </Link>
 
-        <h1 className="text-4xl font-extrabold text-slate-50 mb-3">
-          {project.name}
-        </h1>
-        <div className="w-12 h-1 bg-cyan-500 mb-8 rounded-full" />
+        <div className="flex justify-between" />
+        <div>
+          <h1 className="text-4xl font-extrabold text-slate-50 mb-3">
+            {project.name}
+          </h1>
+          <div className="w-12 h-1 bg-cyan-500 mb-8 rounded-full" />
+        </div>
 
         <div className="flex flex-wrap gap-2 mb-8">
           {project.techStack.map((tech) => (
@@ -67,39 +71,57 @@ export default async function ProjectDetailPage({ params }: Props) {
           ))}
         </div>
 
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold rounded-lg transition-colors mb-8"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              className="w-5 h-5"
+            >
+              <path d="M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z" />
+              <path d="M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z" />
+            </svg>
+            Check it out
+          </a>
+        )}
+
+        <div className="relative w-full aspect-video mb-10 rounded-xl overflow-hidden border border-slate-700 bg-slate-900 shadow-2xl">
+          <Image
+            src={project.image}
+            alt={`${project.name} screenshot`}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+
         <div className="prose prose-invert max-w-none space-y-6 mb-10">
           <div className="bg-slate-800 border border-slate-700 rounded-xl p-6">
             <h2 className="text-slate-50 font-semibold text-lg mb-3 flex items-center gap-2">
               <span className="text-cyan-400">📋</span> Overview
             </h2>
-            <p className="text-slate-300 leading-relaxed">{project.description}</p>
+            <p className="text-slate-300 leading-relaxed">
+              {project.description}
+            </p>
           </div>
 
           <div className="bg-slate-800 border border-slate-700 rounded-xl p-6">
             <h2 className="text-slate-50 font-semibold text-lg mb-3 flex items-center gap-2">
               <span className="text-cyan-400">🏗️</span> Architecture
             </h2>
-            <p className="text-slate-300 leading-relaxed">{project.architecture}</p>
+            <div className="text-slate-300 leading-relaxed space-y-4">
+              {project.architecture.split("\n\n").map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
           </div>
         </div>
-
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold rounded-lg transition-colors"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="w-5 h-5"
-          >
-            <path d="M12.232 4.232a2.5 2.5 0 0 1 3.536 3.536l-1.225 1.224a.75.75 0 0 0 1.061 1.06l1.224-1.224a4 4 0 0 0-5.656-5.656l-3 3a4 4 0 0 0 .225 5.865.75.75 0 0 0 .977-1.138 2.5 2.5 0 0 1-.142-3.667l3-3Z" />
-            <path d="M11.603 7.963a.75.75 0 0 0-.977 1.138 2.5 2.5 0 0 1 .142 3.667l-3 3a2.5 2.5 0 0 1-3.536-3.536l1.225-1.224a.75.75 0 0 0-1.061-1.06l-1.224 1.224a4 4 0 1 0 5.656 5.656l3-3a4 4 0 0 0-.225-5.865Z" />
-          </svg>
-          View on GitHub
-        </a>
       </div>
     </div>
   );

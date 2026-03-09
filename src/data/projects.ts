@@ -6,20 +6,29 @@ export interface Project {
   link: string;
   architecture: string;
   techStack: string[];
+  image: string;
 }
 
 export const projects: Project[] = [
   {
-    name: "Personal Website",
-    slug: "personal-website",
+    name: "Shelflog",
+    slug: "shelflog",
     shortDescription:
-      "My personal portfolio website built with Next.js, TypeScript, and Tailwind CSS.",
+      "Shelflog is a personal project that aims to track games. It serves as a digital bookshelf for my gaming collection.",
     description:
-      "My personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. It showcases my experience, skills, and personal projects.",
-    link: "https://github.com/erduoliveira/personal-website",
+      "ShelfLog was built for players who like to track their games — especially those who want to stop buying more and finally finish what’s already on their shelf. Whether you never started it or stopped halfway through, this is your place to close the loop.",
+    link: "https://shelflog.eduoliveira.dev/demo",
     architecture:
-      "Built with Next.js 15 App Router, TypeScript for type safety, and Tailwind CSS for styling. Deployed on Vercel with automatic CI/CD pipeline.",
-    techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+      "Built with React, TypeScript, and Tailwind CSS on the frontend, and NestJS with MongoDB on the backend.\n\nHosted on AWS with a serverless architecture using Lambda and API Gateway.\n\nThe frontend is a single-page application that communicates with the backend via RESTful APIs. The backend handles game data management, and integrates with third-party APIs for game information.",
+    techStack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "NestJS",
+      "MongoDB",
+      "AWS",
+    ],
+    image: "/shelflog-demo.png",
   },
 ];
 
