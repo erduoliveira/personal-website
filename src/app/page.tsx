@@ -8,6 +8,7 @@ const skills = [
   "Next.js",
   "Node.js",
   "NestJS",
+  "C#",
   "Docker",
   "MongoDB",
   "PostgreSQL",
@@ -27,6 +28,7 @@ const experiences = [
     tags: [
       "React",
       "Microfrontends",
+      "C#",
       "Node.js",
       "NestJS",
       "MongoDB",
@@ -111,7 +113,7 @@ export default function HomePage() {
               </h2>
               <p className="text-slate-400 text-lg mb-10 leading-relaxed">
                 5+ years building scalable web and mobile applications with
-                modern TypeScript, React, and Node.js stacks. Based in{" "}
+                modern TypeScript, React, C#, and Node.js stacks. Based in{" "}
                 <span className="text-slate-300">Oviedo, Florida, USA</span>.
               </p>
               <div className="flex flex-wrap gap-4">
