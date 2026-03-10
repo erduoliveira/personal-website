@@ -181,9 +181,10 @@ export default function HomePage() {
                 performant, and maintainable code.
               </p>
               <p>
-                My main stack includes TypeScript, JavaScript, React, Next.js,
-                Node.js, and NestJS on the backend, along with cloud platforms
-                like AWS and GCP, and containerization with Docker.
+                My main stack includes TypeScript, JavaScript, React, and
+                Next.js on the frontend, with Node.js, NestJS, and C# .NET on
+                the backend, along with cloud platforms like AWS and GCP, and
+                containerization with Docker.
               </p>
               <p>
                 I currently live in Oviedo, Florida, USA with my wife and young
